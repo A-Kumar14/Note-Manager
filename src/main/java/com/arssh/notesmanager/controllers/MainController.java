@@ -67,7 +67,16 @@ public class MainController {
                     Text contentText = new Text(preview);
                     contentText.setStyle("-fx-fill: gray; -fx-font-size: 12;");
 
-                    TextFlow textFlow = new TextFlow(titleText, contentText);
+                    // Add tags if present
+                    TextFlow textFlow;
+                    if (note.getTags() != null && !note.getTags().isEmpty()) {
+                        Text tagsText = new Text("\n🏷️ " + String.join(", ", note.getTags()));
+                        tagsText.setStyle("-fx-fill: #2196F3; -fx-font-size: 11; -fx-font-style: italic;");
+                        textFlow = new TextFlow(titleText, contentText, tagsText);
+                    } else {
+                        textFlow = new TextFlow(titleText, contentText);
+                    }
+
                     setGraphic(textFlow);
                 }
             }

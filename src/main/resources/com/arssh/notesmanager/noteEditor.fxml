@@ -34,20 +34,40 @@
         </Label>
         <TextArea fx:id="textArea" prefRowCount="10" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-        <CheckBox fx:id="reminderCheckBox" text="Add Reminder" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="2" />
+        <!-- AI Features Section -->
+        <Label text="AI Features:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-weight: bold;" />
+        <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER_LEFT">
+            <Button fx:id="summarizeButton" text="Summarize" onAction="#onSummarize" styleClass="ai-button" />
+            <Button fx:id="generateTagsButton" text="Generate Tags" onAction="#onGenerateTags" styleClass="ai-button" />
+            <Button fx:id="extractTasksButton" text="Extract Tasks" onAction="#onExtractTasks" styleClass="ai-button" />
+            <Button text="Configure AI" onAction="#onConfigureAI" style="-fx-font-size: 10px;" />
+        </HBox>
 
-        <Label fx:id="dateLabel" text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-        <DatePicker fx:id="reminderDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="3" maxWidth="Infinity" />
+        <Label text="Tags:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="tagsField" promptText="Enter tags separated by commas" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-        <Label fx:id="timeLabel" text="Time:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-        <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="4" alignment="CENTER_LEFT">
+        <Label text="Summary:" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.valignment="TOP">
+            <GridPane.margin>
+                <Insets top="5" />
+            </GridPane.margin>
+        </Label>
+        <TextArea fx:id="summaryArea" prefRowCount="3" wrapText="true" promptText="AI-generated summary will appear here"
+                  GridPane.columnIndex="1" GridPane.rowIndex="4" editable="true" />
+
+        <CheckBox fx:id="reminderCheckBox" text="Add Reminder" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="2" style="-fx-font-weight: bold; -fx-padding: 10 0 0 0;" />
+
+        <Label fx:id="dateLabel" text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+        <DatePicker fx:id="reminderDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="6" maxWidth="Infinity" />
+
+        <Label fx:id="timeLabel" text="Time:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+        <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="7" alignment="CENTER_LEFT">
             <Spinner fx:id="hourSpinner" prefWidth="70" editable="true" />
             <Label text=":" style="-fx-font-weight: bold;" />
             <Spinner fx:id="minuteSpinner" prefWidth="70" editable="true" />
         </HBox>
 
-        <Label fx:id="priorityLabel" text="Priority:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-        <Spinner fx:id="prioritySpinner" prefWidth="80" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <Label fx:id="priorityLabel" text="Priority:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+        <Spinner fx:id="prioritySpinner" prefWidth="80" GridPane.columnIndex="1" GridPane.rowIndex="8" />
     </GridPane>
 
     <HBox spacing="10" alignment="CENTER_RIGHT">

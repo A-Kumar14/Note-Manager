@@ -77,3 +77,46 @@
     -fx-border-width: 1;
     -fx-border-radius: 3;
 }
+
+/* AI Features styling */
+.ai-button {
+    -fx-background-color: #9C27B0;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+    -fx-padding: 6 12;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.ai-button:hover {
+    -fx-background-color: #7B1FA2;
+}
+
+.ai-button:pressed {
+    -fx-background-color: #6A1B9A;
+}
+
+.ai-button:disabled {
+    -fx-background-color: #cccccc;
+    -fx-text-fill: #666666;
+    -fx-opacity: 0.6;
+}
+
+/* Tag display */
+.tag-label {
+    -fx-background-color: #E3F2FD;
+    -fx-text-fill: #1976D2;
+    -fx-padding: 3 8;
+    -fx-background-radius: 12;
+    -fx-font-size: 10px;
+}
+
+/* Summary area */
+.summary-area {
+    -fx-background-color: #F5F5F5;
+    -fx-border-color: #9C27B0;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
