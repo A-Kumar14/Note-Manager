@@ -49,6 +49,9 @@ public class Note {
     }
 
     public List<String> getTags() {
+        if (tags == null) {
+            tags = new ArrayList<>();
+        }
         return tags;
     }
 

@@ -186,7 +186,10 @@ public class NoteEditorController {
         if (tagsField != null && !tagsField.getText().trim().isEmpty()) {
             String[] tags = tagsField.getText().split(",");
             for (String tag : tags) {
-                note.addTag(tag.trim());
+                String trimmedTag = tag.trim();
+                if (!trimmedTag.isEmpty()) {
+                    note.addTag(trimmedTag);
+                }
             }
         }
 

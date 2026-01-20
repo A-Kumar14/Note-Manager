@@ -2,7 +2,8 @@ module com.arssh.notesmanager {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.google.gson;
-    requires com.theokanning.openai.gpt3.java.service;
+    requires service; // OpenAI library (automatic module name)
+    requires okhttp3; // OkHttp dependency
 
     opens com.arssh.notesmanager to javafx.fxml, com.google.gson;
     opens com.arssh.notesmanager.persistence to com.google.gson;
