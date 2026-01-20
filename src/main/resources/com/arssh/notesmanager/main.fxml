@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import java.net.URL?>
+
+<BorderPane xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.arssh.notesmanager.controllers.MainController">
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 15; -fx-background-color: #2196F3;">
+            <Label text="Notes Manager" style="-fx-text-fill: white; -fx-font-size: 20; -fx-font-weight: bold;" />
+            <HBox HBox.hgrow="ALWAYS" />
+            <Button fx:id="newNoteButton" text="New Note" onAction="#onNewNote"
+                    style="-fx-background-color: white; -fx-text-fill: #2196F3; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.6">
+            <VBox spacing="10" style="-fx-padding: 10;">
+                <Label text="My Notes" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                <ListView fx:id="notesListView" VBox.vgrow="ALWAYS" />
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Button fx:id="editButton" text="Edit" onAction="#onEditNote" disable="true" />
+                    <Button fx:id="deleteButton" text="Delete" onAction="#onDeleteNote" disable="true" />
+                </HBox>
+            </VBox>
+
+            <VBox spacing="10" style="-fx-padding: 10;">
+                <Label text="Upcoming Reminders" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                <ListView fx:id="remindersListView" VBox.vgrow="ALWAYS" />
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>
