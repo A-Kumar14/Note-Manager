@@ -1,7 +1,3 @@
-# Notes Manager
-
-A JavaFX-based desktop application for managing notes with reminders, priority-based scheduling, and AI-powered features.
-
 ## Features
 
 ### Core Features
